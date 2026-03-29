@@ -1,0 +1,2 @@
+class Event:
+    MESSAGE = "message"
