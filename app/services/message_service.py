@@ -1,12 +1,7 @@
-messages = {}
+from app.database.repository import save_message, get_messages
 
-def save_message(room, data):
+def save_message_service(user, room, message):
+    save_message(user, room, message)
 
-    if room not in messages:
-        messages[room] = []
-
-    messages[room].append(data)
-
-
-def get_messages(room):
-    return messages.get(room, [])[-10:]   # last 10 messages
+def get_message_history(room):
+    return get_messages(room)
