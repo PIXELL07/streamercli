@@ -1,0 +1,1 @@
+print("Admin created (dummy)")
