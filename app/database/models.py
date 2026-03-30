@@ -1,5 +1,12 @@
-class Message:
-    def __init__(self, user, room, content):
-        self.user = user
-        self.room = room
-        self.content = content
+from sqlalchemy import Column, Integer, String, DateTime
+from datetime import datetime
+from app.database.db import Base
+
+class Message(Base):
+    __tablename__ = "messages"
+
+    id = Column(Integer, primary_key=True, index=True)
+    user = Column(String)
+    room = Column(String)
+    content = Column(String)
+    timestamp = Column(DateTime, default=datetime.utcnow)
